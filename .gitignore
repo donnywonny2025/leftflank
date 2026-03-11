@@ -1,0 +1,25 @@
+# Environment & secrets
+.env
+credentials.json
+token.json
+
+# Temp / intermediate files
+.tmp/
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+.venv/
+venv/
+env/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
