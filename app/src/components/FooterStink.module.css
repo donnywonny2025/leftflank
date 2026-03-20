@@ -1,0 +1,164 @@
+.footer {
+  background: #ffffff;
+  color: #111111;
+  padding: 100px var(--grid-margin) 48px;
+  border-top: 1px solid #e5e5e5;
+}
+
+.inner {
+  max-width: var(--max-width);
+  margin: 0 auto;
+}
+
+/* Logo — Left-aligned to match nav logo exactly */
+.logoWrap {
+  display: flex;
+  justify-content: flex-start;
+  margin: 0 0 32px;
+}
+
+.tagline {
+  text-align: left;
+  font-family: var(--font-serif);
+  font-size: 16px;
+  color: #888;
+  max-width: 480px;
+  margin: 0 0 48px;
+  line-height: 1.5;
+}
+
+/* Newsletter — Left-aligned */
+.newsletter {
+  display: flex;
+  max-width: 420px;
+  margin: 0 0 0;
+  border: 1px solid #d8d8d8;
+  border-radius: 4px;
+  overflow: hidden;
+  transition: border-color 0.3s ease;
+}
+
+.newsletter:focus-within {
+  border-color: #111;
+}
+
+.emailInput {
+  flex: 1;
+  padding: 14px 16px;
+  font-family: var(--font-sans);
+  font-size: 14px;
+  color: #111;
+  background: transparent;
+  border: none;
+  outline: none;
+}
+
+.emailInput::placeholder {
+  color: #b0b0b0;
+}
+
+.subscribeBtn {
+  padding: 14px 24px;
+  font-family: var(--font-sans);
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: #111;
+  background: transparent;
+  border: none;
+  border-left: 1px solid #d8d8d8;
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s;
+}
+
+.subscribeBtn:hover {
+  background: #111;
+  color: #fff;
+}
+
+/* Link grid — Grid columns, left-aligned */
+.linkGrid {
+  display: grid;
+  grid-template-columns: repeat(2, 180px); /* Fixed column widths for precision */
+  gap: 0 48px;
+  padding: 48px 0 48px;
+  border-top: 1px solid #e5e5e5;
+  margin-top: 64px;
+}
+
+.linkCol {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.linkCol a {
+  font-family: var(--font-sans);
+  font-size: 13px;
+  color: #888;
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+.linkCol a:hover {
+  color: #111;
+}
+
+/* Legal — Full width, subtle bar */
+.legal {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 32px 0 0;
+  border-top: 1px solid #e5e5e5;
+  font-family: var(--font-sans);
+  font-size: 11px;
+  color: #b0b0b0;
+  letter-spacing: 0.02em;
+}
+
+.designCredit {
+  font-weight: 500;
+}
+
+@media (max-width: 768px) {
+  .footer {
+    padding: 64px 24px 32px;
+  }
+
+  .logoWrap {
+    margin: 0 0 24px;
+  }
+
+  .tagline {
+    font-size: 15px;
+    margin: 0 0 36px;
+  }
+
+  .newsletter {
+    flex-direction: column;
+    max-width: 100%;
+  }
+
+  .subscribeBtn {
+    border-left: none;
+    border-top: 1px solid #d8d8d8;
+    padding: 14px;
+  }
+
+  .linkGrid {
+    grid-template-columns: 1fr 1fr;
+    max-width: 100%;
+    gap: 0 24px;
+    padding: 36px 0 32px;
+    margin-top: 48px;
+  }
+
+  .legal {
+    flex-direction: column;
+    gap: 12px;
+    text-align: center;
+    align-items: flex-start; /* Still left-align text on mobile where possible */
+  }
+}

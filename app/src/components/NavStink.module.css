@@ -1,0 +1,162 @@
+/* Nav sits BELOW the hero — clean separator line matching Stink Studios */
+.nav {
+  position: relative;
+  z-index: 10;
+  background: var(--bg-black);
+  border-bottom: 1px solid var(--border-dark);
+}
+
+.inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px var(--grid-margin);
+  max-width: var(--max-width);
+  margin: 0 auto;
+}
+
+.logoLink {
+  font-size: 28px;
+  text-decoration: none;
+  display: block;
+  transform-origin: left center;
+}
+
+.logo {
+  font-family: var(--font-sans);
+  font-weight: 700;
+  font-size: 13px;
+  letter-spacing: normal;
+  color: var(--text-white);
+  text-transform: uppercase;
+  text-decoration: none;
+}
+
+/* Plain text links — no pills, matching Stink Studios */
+.links {
+  display: flex;
+  gap: 32px;
+}
+
+.link {
+  font-family: var(--font-serif);
+  font-size: 15px;
+  font-weight: 400;
+  color: var(--text-white);
+  text-decoration: none;
+  letter-spacing: normal;
+  transition: opacity 0.25s ease;
+}
+
+.link:hover {
+  opacity: 0.5;
+}
+
+/* Hamburger — mobile only */
+.burger {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 4px;
+}
+
+.burger span {
+  display: block;
+  width: 22px;
+  height: 2px;
+  background: var(--text-white);
+  transition: transform 0.3s ease;
+}
+
+/* Mobile menu */
+.mobileMenu {
+  display: none;
+  flex-direction: column;
+  gap: 16px;
+  padding: 24px var(--grid-margin);
+  background: var(--bg-black);
+}
+
+.mobileLink {
+  font-family: var(--font-sans);
+  font-size: 18px;
+  font-weight: 600;
+  color: var(--text-white);
+  text-decoration: none;
+}
+
+.nav.scrolled {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(15px);
+  -webkit-backdrop-filter: blur(15px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  pointer-events: auto;
+  animation: slideDown 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+@keyframes slideDown {
+  from { transform: translateY(-100%); }
+  to { transform: translateY(0); }
+}
+
+.nav.scrolled .inner {
+  padding: 12px var(--grid-margin);
+  max-width: var(--max-width);
+  pointer-events: auto;
+}
+
+.nav.scrolled .logoLink {
+  position: static;
+  opacity: 1;
+}
+
+.nav.scrolled .links {
+  position: static;
+  transform: none;
+  flex-direction: row;
+  gap: 32px;
+  pointer-events: auto;
+  align-items: center;
+}
+
+.nav.scrolled .link {
+  font-family: var(--font-serif);
+  font-size: 14px;
+  font-weight: 400;
+  letter-spacing: normal;
+  text-transform: none;
+  writing-mode: horizontal-tb;
+  transform: none;
+  padding: 0;
+}
+
+@media (max-width: 768px) {
+  .inner {
+    padding: 16px 20px;
+  }
+
+  .links {
+    display: none;
+  }
+
+  .burger {
+    display: flex;
+  }
+
+  .mobileMenu {
+    display: flex;
+  }
+
+  .nav.scrolled .inner {
+    padding: 12px 20px;
+    flex-direction: row;
+    align-items: center;
+  }
+}

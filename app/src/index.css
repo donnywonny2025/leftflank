@@ -1,0 +1,57 @@
+:root {
+  --bg-black: #000000;
+  --bg-white: #FFFFFF;
+  --text-white: #FFFFFF;
+  --text-black: #000000;
+  --text-grey: #888888;
+  --text-light-grey: #AAAAAA;
+  --border-dark: rgba(255,255,255,0.15);
+  --font-sans: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  --font-serif: "DM Serif Display", serif;
+  --grid-margin: 40px;
+  --grid-gap: 20px;
+  --max-width: 1440px;
+}
+
+*, *::before, *::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-sans);
+  background: var(--bg-black);
+  color: var(--text-white);
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+img, video {
+  display: block;
+  max-width: 100%;
+}
+
+button, input, textarea, select {
+  font-family: inherit;
+  font-size: inherit;
+  color: inherit;
+  border: none;
+  outline: none;
+  background: none;
+}
+
+::selection {
+  background: #0044FF;
+  color: white;
+}

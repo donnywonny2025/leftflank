@@ -1,0 +1,106 @@
+.container {
+  min-height: 100vh;
+  background: #000;
+  color: #fff;
+}
+
+.main {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 160px var(--grid-margin) 80px;
+}
+
+.header {
+  margin-bottom: 60px;
+}
+
+.client {
+  display: block;
+  font-family: var(--font-mono);
+  font-size: 12px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: #888;
+  margin-bottom: 12px;
+}
+
+.title {
+  font-family: var(--font-sans);
+  font-size: clamp(32px, 5vw, 64px);
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: -0.04em;
+  line-height: 1;
+  margin-bottom: 24px;
+}
+
+.tags {
+  display: flex;
+  gap: 20px;
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: 0.1em;
+  color: #666;
+}
+
+.tags span {
+  text-decoration: underline;
+}
+
+.year {
+  text-decoration: none !important;
+  color: #444;
+}
+
+.playerSection {
+  width: 100%;
+  margin-bottom: 80px;
+}
+
+.aspectRatio {
+  position: relative;
+  width: 100%;
+  padding-bottom: 56.25%; /* 16:9 */
+  background: #111;
+}
+
+.aspectRatio iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.footerNav {
+  border-top: 1px solid #222;
+  padding-top: 40px;
+}
+
+.backLink {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  font-family: var(--font-mono);
+  font-size: 13px;
+  letter-spacing: 0.15em;
+  color: #fff;
+  text-decoration: none;
+  opacity: 0.6;
+  transition: opacity 0.3s ease;
+}
+
+.backLink:hover {
+  opacity: 1;
+}
+
+.backLink svg {
+  width: 18px;
+  height: 18px;
+}
+
+@media (max-width: 768px) {
+  .main {
+    padding-top: 120px;
+  }
+}

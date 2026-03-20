@@ -1,0 +1,42 @@
+# Environment & secrets
+.env
+credentials.json
+token.json
+
+# Temp / intermediate files
+.tmp/
+.tmp_polotracker/
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+.venv/
+venv/
+env/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Media & High-density assets
+videos/
+renders/
+exports/
+*.mp4
+*.mov
+*.webm
+*.avi
+*.mkv
+*.zip
+*.tar
+*.gz
+*.pkg
+*.dmg
+node_modules/

@@ -1,0 +1,2 @@
+yt-dlp
+# ffmpeg and ffprobe are required system binaries

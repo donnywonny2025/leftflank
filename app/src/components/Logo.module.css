@@ -1,0 +1,39 @@
+.logoContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  width: fit-content;
+}
+
+.logoSvg {
+  display: block;
+  overflow: visible;
+}
+
+.svgTopText {
+  font-family: var(--font-sans);
+  font-size: 23px;
+  font-weight: 900;
+  /* letter-spacing must be handled by SVG textLength for perfect alignment */
+  dominant-baseline: alphabetic;
+}
+
+.svgBottomText {
+  font-family: var(--font-sans);
+  font-size: 7px;
+  font-weight: 900;
+  text-transform: uppercase;
+  dominant-baseline: alphabetic;
+}
+
+.svgLine {
+  stroke-linecap: square;
+}
+
+.lightTheme {
+  --logo-color: #ffffff;
+}
+
+.darkTheme {
+  --logo-color: #000000;
+}

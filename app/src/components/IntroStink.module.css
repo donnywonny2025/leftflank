@@ -1,0 +1,58 @@
+.intro {
+  background: var(--bg-black);
+  padding: 24px var(--grid-margin) 20px;
+  max-width: var(--max-width);
+  margin: 0 auto;
+}
+
+.inner {
+  max-width: 600px;
+}
+
+.asterisk {
+  display: inline-block;
+  vertical-align: middle;
+  margin-top: -0.1em;
+}
+
+.statement {
+  font-family: var(--font-serif);
+  font-style: normal;
+  font-size: clamp(20px, 3vw, 32px);
+  line-height: 1.25;
+  color: var(--text-white);
+  font-weight: 400;
+}
+
+/* Tags — underlined monospace caps (matches Stink Studios) */
+.tags {
+  display: flex;
+  gap: 18px;
+  margin-top: 16px;
+  flex-wrap: wrap;
+}
+
+.tag {
+  font-family: 'SF Mono', 'Fira Code', 'Courier New', monospace;
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.12em;
+  color: var(--text-grey);
+  text-transform: uppercase;
+  text-decoration: underline;
+  text-underline-offset: 4px;
+  text-decoration-color: rgba(255, 255, 255, 0.2);
+  cursor: pointer;
+  transition: color 0.25s ease, text-decoration-color 0.25s ease;
+}
+
+.tag:hover {
+  color: var(--text-white);
+  text-decoration-color: var(--text-white);
+}
+
+@media (max-width: 768px) {
+  .intro {
+    padding: 24px 20px;
+  }
+}

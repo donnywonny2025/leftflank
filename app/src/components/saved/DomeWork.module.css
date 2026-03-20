@@ -1,0 +1,32 @@
+.hero {
+  background: var(--bg-white);
+  padding: 40px 24px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* The contained bounding box — like Instrument's rounded video window */
+.domeBox {
+  position: relative;
+  width: 100%;
+  max-width: calc(100vw - 16px);
+  height: 65vh;
+  min-height: 450px;
+  max-height: 700px;
+  border-radius: 24px;
+  overflow: hidden;
+  background: #060010;
+}
+
+@media (max-width: 768px) {
+  .hero {
+    padding: 24px 12px;
+  }
+
+  .domeBox {
+    border-radius: 16px;
+    height: 50vh;
+    min-height: 300px;
+  }
+}
