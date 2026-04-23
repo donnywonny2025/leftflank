@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react'
 import { motion } from 'framer-motion'
-import { Link, useLocation } from 'react-router-dom'
+import { Link, useLocation, useNavigate } from 'react-router-dom'
 import Logo from './Logo'
 import styles from './NavStink.module.css'
 
@@ -8,11 +8,25 @@ export default function NavStink() {
   const [open, setOpen] = useState(false)
   const [scrolled, setScrolled] = useState(false)
   const location = useLocation()
+  const navigate = useNavigate()
   const isHome = location.pathname === '/'
+
+  // Handle hash scrolling on page load or navigation
+  useEffect(() => {
+    if (location.hash) {
+      const id = location.hash.replace('#', '')
+      // Small delay to let the page render before scrolling
+      setTimeout(() => {
+        const el = document.getElementById(id)
+        if (el) {
+          el.scrollIntoView({ behavior: 'smooth' })
+        }
+      }, 100)
+    }
+  }, [location])
 
   useEffect(() => {
     const handleScroll = () => {
-      // Threshold for when navigation should transition (e.g. past hero)
       if (window.scrollY > 200) {
         setScrolled(true)
       } else {
@@ -38,12 +52,21 @@ export default function NavStink() {
   }
 
   const handleLinkClick = (e, target) => {
-    if (isHome && target.startsWith('#')) {
-      // Allow default hash scroll on home page
-      setOpen(false)
+    e.preventDefault()
+    setOpen(false)
+    const id = target.replace('#', '')
+
+    if (isHome) {
+      // Already on home page — just scroll to the section
+      const el = document.getElementById(id)
+      if (el) {
+        el.scrollIntoView({ behavior: 'smooth' })
+      }
+      // Update URL hash without triggering navigation
+      window.history.pushState(null, '', `/#${id}`)
     } else {
-      // Force navigation to home page with hash
-      setOpen(false)
+      // On a different page — navigate home, then scroll after render
+      navigate(`/#${id}`)
     }
   }
 
@@ -84,10 +107,10 @@ export default function NavStink() {
 
       {open && (
         <div className={styles.mobileMenu}>
-          <Link to="/#work" className={styles.mobileLink} onClick={() => setOpen(false)}>Work</Link>
-          <Link to="/#about" className={styles.mobileLink} onClick={() => setOpen(false)}>About</Link>
-          <Link to="/#news" className={styles.mobileLink} onClick={() => setOpen(false)}>News</Link>
-          <Link to="/#contact" className={styles.mobileLink} onClick={() => setOpen(false)}>Contact</Link>
+          <Link to="/#work" className={styles.mobileLink} onClick={(e) => handleLinkClick(e, '#work')}>Work</Link>
+          <Link to="/#about" className={styles.mobileLink} onClick={(e) => handleLinkClick(e, '#about')}>About</Link>
+          <Link to="/#news" className={styles.mobileLink} onClick={(e) => handleLinkClick(e, '#news')}>News</Link>
+          <Link to="/#contact" className={styles.mobileLink} onClick={(e) => handleLinkClick(e, '#contact')}>Contact</Link>
         </div>
       )}
     </motion.nav>
